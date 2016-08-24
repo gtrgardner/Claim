@@ -3,38 +3,48 @@
 // Display "You are "?" years old.  DOB mm/dd/yyyy
 
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Calendar;
 
 public class Calc {
+	
+	static int now = (int) Calendar.getInstance().get(1);
+	static int age;
+	static int day;
+	static int month;
+	static int birthYear;
+			
+	
+		public Calc(int age, int now, int day, int month, int birthYear){
+			
+			Calc.now = now;
+			Calc.day = day;
+			Calc.month = month;
+			Calc.birthYear = birthYear;
+			
+			return;
+			
+		}
+		
+		public static void main(String[] args) {
+			
+			 Scanner in = new Scanner(System.in);
 
-	public Calc(){
-		
-		int now = (int) Calendar.getInstance().get(1);
-		int age;
-		
-		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter day of birth: ");
-		int day = sc.nextInt();
-		System.out.println("Enter the month you were born in: ");
-		int month = sc.nextInt();
-		System.out.println("Enter year of birth: ");
-		int birthYear =sc.nextInt();
-		sc.close();
-		
-		age = now - birthYear;
-		
-		System.out.println("You are " + age + " years old. " + day +"/" + month+ "/" + birthYear);		
-		System.out.println(now);
-}
-	
-	
-	
-	public static void main(String[] args) {
-		Calc c = new Calc();
-	
-		
-		
+		        System.out.print("Enter day of birth: ");
+		        Calc.day  = (in.nextInt());
+		        System.out.print("Enter month of birth: ");
+		        Calc.month = (in.nextInt());
+		        System.out.print("Enter year you were born: ");
+		        Calc.birthYear = (in.nextInt());
+			
+			
+			age=(now-birthYear);
+			
+			System.out.println("Your age is " + age + " " + day +"/" + month + "/" + birthYear);
+			
+		in.close();
 	}
-
 }
+
+	
+
