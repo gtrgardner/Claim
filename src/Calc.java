@@ -13,6 +13,7 @@ public class Calc {
 	static int day;
 	static int month;
 	static int birthYear;
+	
 			
 	
 		public Calc(int age, int now, int day, int month, int birthYear){
@@ -26,24 +27,37 @@ public class Calc {
 			
 		}
 		
-		public static void main(String[] args) {
-			
-			 Scanner in = new Scanner(System.in);
-
-		        System.out.print("Enter day of birth: ");
-		        Calc.day  = (in.nextInt());
-		        System.out.print("Enter month of birth: ");
-		        Calc.month = (in.nextInt());
-		        System.out.print("Enter year you were born: ");
-		        Calc.birthYear = (in.nextInt());
-			
+		public void calculateAge(){
 			
 			age=(now-birthYear);
-			
 			System.out.println("Your age is " + age + " " + day +"/" + month + "/" + birthYear);
+		}
+		
+		public void userInput(){
 			
+			Scanner in = new Scanner(System.in);
+
+	        System.out.print("Enter day of birth: ");
+	        Calc.day  = (in.nextInt());
+	        System.out.print("Enter month of birth: ");
+	        Calc.month = (in.nextInt());
+	        System.out.print("Enter year you were born: ");
+	        Calc.birthYear = (in.nextInt());
+		
 		in.close();
+			
+			
+		}
+		
+		public static void main(String[] args) {
+			
+			 Calc c = new Calc( age, now, day, month, birthYear);
+			 c.userInput();
+			 c.calculateAge();
+			 
 	}
+
+		
 }
 
 	
