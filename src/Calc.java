@@ -44,7 +44,7 @@ public class Calc {
 	        System.out.print("Enter year you were born: ");
 	        Calc.birthYear = (in.nextInt());
 		
-		in.close();
+	        in.close();
 			
 			
 		}
